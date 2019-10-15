@@ -2,4 +2,6 @@ import Danger
 let danger = Danger()
 
 let editedFiles = danger.git.modifiedFiles + danger.git.createdFiles
-message("These files have changed: \(editedFiles.joined())")
+message("These files have changed: \(editedFiles.joined()), ")
+
+SwiftLint.lint(directory: "danger-swift-integration", configFile: ".swiftlint.yml")
